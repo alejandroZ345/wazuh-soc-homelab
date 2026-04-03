@@ -76,6 +76,17 @@ wsl --import docker-desktop D:\WSL_Wazuh\DockerDesktop D:\WSL_Wazuh\docker-deskt
 
 ---
 
+**Update:** Docker virtual disk `docker_data.vhd` was succesfully migrated to D: using the desktop app tools.
+
+### Phase 1.2.1 - Discovery & Docker Engine Storage Relocation
+
+During the initial deployment, it was believed that Docker Desktop's modern architecture required the container virtual disk (`docker_data.vhdx`) to remain on the primary C: drive. However, further research into the engine's updated mechanics revealed a native UI feature to relocate this dynamic disk, eliminating the need for complex PowerShell workarounds and successfully completing the full migration.
+
+- **Optimal Execution:**
+    1. Accessed Docker Desktop settings: **Settings -> Resources -> Advanced** (or Virtual Disk).
+    2. Under the **Disk image location** section, utilized the **Browse** function to target a newly created directory on the secondary drive: `D:\WSL_Wazuh\DockerData`.
+    3. Clicked **Apply & restart**. The Docker engine automatically halted services, transferred the virtual disk to the D: drive, and resumed operations. This finding permanently resolved the primary host's storage saturation issues.
+
 ### Phase 1.3 — Wazuh infrastructure deployment
 
 All commands executed from the isolated Ubuntu environment (`wsl -d Ubuntu`).
