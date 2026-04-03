@@ -133,7 +133,7 @@ Two approaches were attempted and documented before arriving at the validated pr
 
 - **Approach:** Injected the new high-entropy password directly into the environment variables of `docker-compose.yml`.
 - **Challenges encountered:**
-  1. **YAML parsing errors:** Unquoted special characters (e.g., `[`, `^`) in the complex password caused parsing failures. Mitigated by wrapping the string in double quotes (`"..."`).
+  1. **YAML parsing errors:** Unquoted special characters (e.g., `[`, `^`) in the complex password caused parsing failures. Mitigated by wrapping the string in double quotes (`"..."`). You can also avoid the use of the specified characters and not use the double quotes to wrap your password.
   2. **Client-server authentication desync:** While the Compose file updated the client-side credentials (Dashboard and Manager), the Indexer (Server) image ships with the legacy `SecretPassword` pre-hashed in its internal database. The Dashboard was consequently locked out.
 - **Conclusion:** The Indexer requires a pre-computed Bcrypt hash in its core configuration file **prior to initialization**.
 
@@ -171,7 +171,7 @@ nano config/wazuh_indexer/internal_users.yml
 ```bash
 nano docker-compose.yml
 # Update INDEXER_PASSWORD, DASHBOARD_PASSWORD, and wazuh.manager API passwords
-# Wrap the value in double quotes: "Your_Custom_Password"
+# Wrap the value in double quotes (not necessary if you avoided the previously mentioned characters): "Your_Custom_Password" or Your_Custom_Password
 ```
 
 **Step 4 — Clean initialization**
