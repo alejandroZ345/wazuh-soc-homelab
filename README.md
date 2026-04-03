@@ -18,7 +18,7 @@ The lab is structured as a series of documented phases, each building on the pre
 
 ---
 
-## Architecture (./wazuh_lab_architecture.md/)
+[Architecture](./wazuh_lab_architecture.md/)
 
 ---
 
