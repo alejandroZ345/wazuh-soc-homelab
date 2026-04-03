@@ -18,45 +18,7 @@ The lab is structured as a series of documented phases, each building on the pre
 
 ---
 
-## Architecture
-
-```mermaid
-graph TB
-    subgraph HOST["Host Machine — Windows (AMD Ryzen 7 5700X)"]
-        subgraph WSL2["WSL2 Hypervisor Layer"]
-            subgraph UBUNTU["Ubuntu (D: drive)"]
-                subgraph DOCKER["Docker Desktop v29.3.1"]
-                    IDX["Wazuh Indexer\nOpenSearch · TLS · Bcrypt auth"]
-                    MGR["Wazuh Manager\nRule engine · Alert correlation"]
-                    DASH["Wazuh Dashboard\nhttps://localhost"]
-                end
-            end
-            subgraph KALI["Kali Linux (D: drive) — Attacker"]
-                HYDRA["Hydra\nSSH brute-force · rockyou.txt"]
-                NMAP["Nmap\nPort scanning"]
-            end
-        end
-        WIN_AGENT["Windows Agent\nWazuhSvc · Telemetry"]
-    end
-
-    subgraph TARGET["Ubuntu Agent — Target endpoint"]
-        SSH["OpenSSH Server\nDeliberate attack surface"]
-        LIN_AGENT["Wazuh Agent\nauth.log monitoring"]
-    end
-
-    IDX <-->|"Internal TLS"| MGR
-    MGR <-->|"Internal TLS"| DASH
-
-    WIN_AGENT -->|"Encrypted telemetry :1514"| MGR
-    LIN_AGENT -->|"Encrypted telemetry :1514"| MGR
-
-    HYDRA -->|"SSH brute-force — 1,815 auth failures"| SSH
-    NMAP  -->|"Port scan"| SSH
-    SSH --- LIN_AGENT
-
-    MGR -->|"Level 5: auth failure / Level 10: brute-force"| IDX
-    IDX -->|"Indexed events"| DASH
-```
+## Architecture (./wazuh_lab_architecture.md/)
 
 ---
 
