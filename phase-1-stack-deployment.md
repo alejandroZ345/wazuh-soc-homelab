@@ -220,4 +220,4 @@ docker compose up -d
 
 ---
 
-*Next: [Phase 2 — Agent deployment & lifecycle management](../phase-2-agent-deployment/)*
+*Next: [Phase 2 — Agent deployment & lifecycle management](../phase-2-agent-deployment.md/)*
