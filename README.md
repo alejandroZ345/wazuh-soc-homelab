@@ -40,8 +40,8 @@ The lab is structured as a series of documented phases, each building on the pre
 | [Phase 2](./phase-2-agent-deployment.md/) | Agent deployment & lifecycle management | ✅ Complete |
 | [Phase 3](./phase-3-threat-simulation.md/) | Linux agent & active threat simulation | ✅ Complete |
 | [Phase 4](./phase-4-fim.md/) | File Integrity Monitoring (FIM) | ✅ Complete |
-| Phase 5 | Custom detection rules | 🔄 In progress |
-| Phase 6 | MITRE ATT&CK complete mapping | 🔜 Planned |
+| [Phase 5](./phase5-custom-rules.md/) | Custom detection rules | ✅ Complete |
+| Phase 6 | MITRE ATT&CK complete mapping | 🔄 In progress |
 | Phase 7 | Custom Wazuh Dashboard | 🔜 Planned |
 | Phase 8 | Active Response Scripts | 🔜 Planned |
 | Phase 9 | TheHive integration — incident case management | 🔜 Planned |
@@ -85,8 +85,8 @@ The lab is structured as a series of documented phases, each building on the pre
 
 ## Roadmap
 
-- [ ] Phase 4: Configure FIM on `/etc`, `/bin`, `/usr/bin` and document alert output
-- [ ] Phase 5: Write custom Wazuh XML detection rules (brute-force threshold, sudo abuse, `/etc/passwd` modification)
+- [x] Phase 4: Configure FIM on `/etc`, `/bin`, `/usr/bin` and document alert output
+- [x] Phase 5: Write custom Wazuh XML detection rules (brute-force threshold, sudo abuse, `/etc/passwd` modification)
 - [ ] Phase 6: MITRE ATT&CK mapping table (complete coverage across all phases)
 - [ ] Phase 7: Implement a Custom Wazuh Dashboard starring at critical KPIs in lab
 - [ ] Phase 8: Implement Active Response scripts for automated threat containment
