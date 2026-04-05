@@ -147,4 +147,4 @@ A final round of active threat simulations was conducted after deploying the tun
 
 ---
 
-*Previous: [Phase 4 — File Integrity Monitoring](../phase-4-fim/) · Next: [Phase 6 — MITRE ATT&CK complete mapping](../phase-6-mitre-mapping/)*
+*Previous: [Phase 4 — File Integrity Monitoring](./phase-4-fim.md/) · Next: [Phase 6 — MITRE ATT&CK complete mapping](./phase-6-mitre-mapping.md/)*
