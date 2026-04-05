@@ -40,7 +40,7 @@ The lab is structured as a series of documented phases, each building on the pre
 | [Phase 2](./phase-2-agent-deployment.md/) | Agent deployment & lifecycle management | ✅ Complete |
 | [Phase 3](./phase-3-threat-simulation.md/) | Linux agent & active threat simulation | ✅ Complete |
 | [Phase 4](./phase-4-fim.md/) | File Integrity Monitoring (FIM) | ✅ Complete |
-| [Phase 5](./phase5-custom-rules.md/) | Custom detection rules | ✅ Complete |
+| [Phase 5](./phase-5-custom-rules.md/) | Custom detection rules | ✅ Complete |
 | Phase 6 | MITRE ATT&CK complete mapping | 🔄 In progress |
 | Phase 7 | Custom Wazuh Dashboard | 🔜 Planned |
 | Phase 8 | Active Response Scripts | 🔜 Planned |
