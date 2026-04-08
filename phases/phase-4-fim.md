@@ -111,4 +111,4 @@ The FIM module successfully detected unauthorized file creation and subsequent i
 
 ---
 
-*Previous: [Phase 3 — Linux agent & active threat simulation](../phase-3-threat-simulation/) · Next: [Phase 5 — Custom detection engineering & rule tuning](../phase-5-custom-rules/)*
+*Previous: [Phase 3 — Linux agent & active threat simulation](./phase-3-threat-simulation) · Next: [Phase 5 — Custom detection engineering & rule tuning](./phase-5-custom-rules)*

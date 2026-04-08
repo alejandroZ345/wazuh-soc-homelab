@@ -109,4 +109,4 @@ For recurring false positives from a known internal IP, consider adding a target
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phase-5-custom-rules.md#4-final-xml-configuration) · Brute-force simulation in [Phase 3](../phase-3-threat-simulation.md/) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phases/phase-5-custom-rules.md#4-final-xml-configuration) · Brute-force simulation in [Phase 3](../phases/phase-3-threat-simulation.md/) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*

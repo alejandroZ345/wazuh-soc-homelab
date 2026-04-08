@@ -106,4 +106,4 @@ If a specific user consistently triggers false positives, consider adding a moni
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phase-5-custom-rules.md#4-final-xml-configuration) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phases/phase-5-custom-rules.md#4-final-xml-configuration) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*

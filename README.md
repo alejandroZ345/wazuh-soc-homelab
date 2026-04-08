@@ -35,14 +35,14 @@ The lab is structured as a series of documented phases, each building on the pre
 
 | Phase | Title | Status |
 |---|---|---|
-| [Lab Architecture](./lab_architecture.md/) | Design lab architecture | ✅ Complete |
-| [Phase 1](./phase-1-stack-deployment.md/) | Stack deployment & security hardening | ✅ Complete |
-| [Phase 2](./phase-2-agent-deployment.md/) | Agent deployment & lifecycle management | ✅ Complete |
-| [Phase 3](./phase-3-threat-simulation.md/) | Linux agent & active threat simulation | ✅ Complete |
-| [Phase 4](./phase-4-fim.md/) | File Integrity Monitoring (FIM) | ✅ Complete |
-| [Phase 5](./phase-5-custom-rules.md/) | Custom detection rules | ✅ Complete |
-| [Phase 6](./phase-6-mitre-mapping.md/) | MITRE ATT&CK mapping & detection standardization | ✅ Complete |
-| [Phase 7](./phase-7-custom-dashboard.md/)| Custom Wazuh Dashboard | ✅ Complete |
+| [Lab Architecture](./architecture/lab_architecture.md/) | Design lab architecture | ✅ Complete |
+| [Phase 1](./phases/phase-1-stack-deployment.md/) | Stack deployment & security hardening | ✅ Complete |
+| [Phase 2](./phases/phase-2-agent-deployment.md/) | Agent deployment & lifecycle management | ✅ Complete |
+| [Phase 3](./phases/phase-3-threat-simulation.md/) | Linux agent & active threat simulation | ✅ Complete |
+| [Phase 4](./phases/phase-4-fim.md/) | File Integrity Monitoring (FIM) | ✅ Complete |
+| [Phase 5](./phases/phase-5-custom-rules.md/) | Custom detection rules | ✅ Complete |
+| [Phase 6](./phases/phase-6-mitre-mapping.md/) | MITRE ATT&CK mapping & detection standardization | ✅ Complete |
+| [Phase 7](./phases/phase-7-custom-dashboard.md/)| Custom Wazuh Dashboard | ✅ Complete |
 | Phase 8 | Active Response Scripts | 🔄 In progress |
 | Phase 9 | TheHive integration — incident case management | 🔜 Planned |
 
@@ -113,24 +113,38 @@ The lab is structured as a series of documented phases, each building on the pre
 wazuh-siem-homelab/
 │
 ├── README.md
-├── lab_architecture.md
+├── LICENSE
 │
-├── phase-1-stack-deployment.md
-├── phase-2-agent-deployment.md
-├── phase-3-threat-simulation.md
-├── phase-4-fim.md
-├── phase-5-custom-rules.md
-├── phase-6-mitre-mapping.md
+├── architecture/ 
+│    └── lab_architecture.md
+│
+├── phases/ 
+│    ├── phase-1-stack-deployment.md      
+│    ├── phase-2-agent-deployment.md         
+│    ├── phase-3-threat-simulation.md           
+│    ├── phase-4-fim.md    
+│    ├── phase-5-custom-rules.md
+│    ├── phase-6-mitre-mapping.md
+│    └── phase-7-custom-dashboard.md
 │
 ├── detections/
 │   └── mitre-attack-map.md                   
 │
-└── runbooks/
-    ├── runbook-100001-passwd-modification.md  
-    ├── runbook-100002-ssh-bruteforce.md       
-    ├── runbook-100003-sudo-abuse.md           
-    ├── runbook-100004-discovery.md            
-    └── runbook-100005-reverse-shell.md        
+├── runbooks/
+│    ├── runbook-100001-passwd-modification.md  
+│    ├── runbook-100002-ssh-bruteforce.md       
+│    ├── runbook-100003-sudo-abuse.md           
+│    ├── runbook-100004-discovery.md            
+│    └── runbook-100005-reverse-shell.md     
+│ 
+├── .github/
+│   ├── SECURITY.md                            
+│   ├── CODE_OF_CONDUCT.md                     
+│   ├── CONTRIBUTING.md                        
+│   └── ISSUE_TEMPLATE/
+│       ├── config.yml                         
+│       ├── bug-report.yml                    
+│       └── phase-suggestion.yml               
 ```
 
 ---

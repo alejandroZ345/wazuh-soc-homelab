@@ -88,4 +88,4 @@ This layout ensures that the most time-sensitive information (active attack indi
 
 ---
 
-*Previous: [Phase 6 — MITRE ATT&CK mapping](./phase-6-mitre-mapping.md/) · Next: [Phase 8 — Active Response scripts](./phase-8-active-response.md/)*
+*Previous: [Phase 6 — MITRE ATT&CK mapping](./phase-6-mitre-mapping.md) · Next: [Phase 8 — Active Response scripts](./phase-8-active-response.md)*

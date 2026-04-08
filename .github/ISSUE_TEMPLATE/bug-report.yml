@@ -1,0 +1,68 @@
+name: "Bug / Inconsistency Report"
+description: "Report a documentation error, broken link, inaccurate MITRE mapping, or content that doesn't match actual lab behavior."
+title: "[Bug]: "
+labels: ["bug", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Accurate documentation is critical for this project — every correction helps.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Affected area"
+      description: "Which part of the repository is affected?"
+      options:
+        - "Phase file (phase-1 through phase-7)"
+        - "Detection mapping (detections/mitre-attack-map.md)"
+        - "Runbook (runbooks/)"
+        - "README.md"
+        - "Lab architecture"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: file
+    attributes:
+      label: "Specific file"
+      description: "Which file contains the issue? (e.g., phase-5-custom-rules.md, runbook-100002-ssh-bruteforce.md)"
+      placeholder: "phase-X-name.md or runbook-XXXXX-name.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "Type of issue"
+      description: "What kind of problem did you find?"
+      options:
+        - "Typo or grammatical error"
+        - "Broken or incorrect link"
+        - "Inaccurate MITRE ATT&CK mapping"
+        - "Technical inaccuracy (command, rule logic, or configuration)"
+        - "Inconsistency between files (e.g., phase file says X but detection map says Y)"
+        - "Missing information"
+        - "Formatting issue"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Describe the issue clearly. Include the specific section, what is currently written, and what it should say."
+      placeholder: |
+        In phase-5-custom-rules.md, section 3, the table shows SID 5716 as the expected parent for the brute-force rule, but the text below says 5760 was the actual SID discovered. The table should reflect the corrected value.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: "Suggested fix (optional)"
+      description: "If you know what the correct content should be, include it here."
+      placeholder: "The correct MITRE technique ID is T1078.003, not T1078."
+    validations:
+      required: false

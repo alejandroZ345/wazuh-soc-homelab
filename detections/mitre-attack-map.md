@@ -70,4 +70,4 @@
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](../README.md) project · Detection logic in [Phase 5](../phase-5-custom-rules.md/) · Triage procedures in [runbooks/](../runbooks/)*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project · Detection logic in [Phase 5](../phases/phase-5-custom-rules.md/) · Triage procedures in [runbooks/](../runbooks)*

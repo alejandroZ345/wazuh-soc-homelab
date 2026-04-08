@@ -76,7 +76,7 @@ wsl --import docker-desktop D:\WSL_Wazuh\DockerDesktop D:\WSL_Wazuh\docker-deskt
 
 ---
 
-**Update:** Docker virtual disk `docker_data.vhd` was succesfully migrated to D: using the desktop app tools.
+**Update:** Docker virtual disk `docker_data.vhd` was successfully migrated to D: using the desktop app tools.
 
 ### Phase 1.2.1 - Discovery & Docker Engine Storage Relocation
 
@@ -220,4 +220,4 @@ docker compose up -d
 
 ---
 
-*Next: [Phase 2 — Agent deployment & lifecycle management](./phase-2-agent-deployment.md/)*
+*Next: [Phase 2 — Agent deployment & lifecycle management](./phase-2-agent-deployment.md)*

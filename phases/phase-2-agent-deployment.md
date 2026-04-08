@@ -112,4 +112,4 @@ curl -k -u admin:<password> \
 
 ---
 
-*Previous: [Phase 1 — Stack deployment](./phase-1-stack-deployment.md/) · Next: [Phase 3 — Linux agent & active threat simulation](./phase-3-threat-simulation.md/)*
+*Previous: [Phase 1 — Stack deployment](./phase-1-stack-deployment.md) · Next: [Phase 3 — Linux agent & active threat simulation](./phase-3-threat-simulation.md)*

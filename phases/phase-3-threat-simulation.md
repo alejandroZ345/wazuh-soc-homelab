@@ -151,4 +151,4 @@ The threat detection pipeline is fully operational end-to-end. The SIEM correctl
 
 ---
 
-*Previous: [Phase 2 — Agent deployment & lifecycle management](./phase-2-agent-deployment.md/) · Next: [Phase 4 — File Integrity Monitoring](./phase-4-fim.md/)*
+*Previous: [Phase 2 — Agent deployment & lifecycle management](./phase-2-agent-deployment.md) · Next: [Phase 4 — File Integrity Monitoring](./phase-4-fim.md)*

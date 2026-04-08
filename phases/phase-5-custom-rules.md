@@ -244,4 +244,4 @@ Live threat simulations triggered both alerts instantly:
 
 ---
 
-*Previous: [Phase 4 — File Integrity Monitoring](./phase-4-fim.md/) · Next: [Phase 6 — MITRE ATT&CK complete mapping](./phase-6-mitre-mapping.md/)*
+*Previous: [Phase 4 — File Integrity Monitoring](./phase-4-fim.md) · Next: [Phase 6 — MITRE ATT&CK complete mapping](./phase-6-mitre-mapping.md)*

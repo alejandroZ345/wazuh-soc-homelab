@@ -82,4 +82,4 @@ If a specific user or automated process generates persistent noise, consider cre
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 6](../phase-5-custom-rules.md#6-advanced-detection-engineering--the-pyramid-of-pain) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 6](../phases/phase-5-custom-rules.md#6-advanced-detection-engineering--the-pyramid-of-pain) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*

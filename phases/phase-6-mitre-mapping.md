@@ -26,7 +26,7 @@ Three actions were executed to complete this phase:
 
 ## 3. Consolidated telemetry & tactic matrix
 
-The complete mapping is maintained as a standalone artifact in [`detections/mitre-attack-map.md`](./detections/mitre-attack-map.md).
+The complete mapping is maintained as a standalone artifact in [`detections/mitre-attack-map.md`](../detections/mitre-attack-map.md).
 
 Summary of coverage by phase:
 
@@ -69,21 +69,21 @@ This distinction matters: accurate ATT&CK mapping ensures that coverage analysis
 
 ### On the behavioral rules (Phase 5+)
 
-Rule 100005 uses a broad behavioral net by design (see [Phase 5 § 6](./phase-5-custom-rules.md#6-advanced-detection-engineering--the-pyramid-of-pain)). Because it catches a wide array of network-socket activity, it requires a triage runbook to determine the exact nature of each alert. The operational procedure is documented in [`runbooks/runbook-100005-reverse-shell.md`](./runbooks/runbook-100005-reverse-shell.md).
+Rule 100005 uses a broad behavioral net by design (see [Phase 5 § 6](./phase-5-custom-rules.md#6-advanced-detection-engineering--the-pyramid-of-pain)). Because it catches a wide array of network-socket activity, it requires a triage runbook to determine the exact nature of each alert. The operational procedure is documented in [`runbooks/runbook-100005-reverse-shell.md`](../runbooks/runbook-100005-reverse-shell.md).
 
 ---
 
 ## 6. Runbook library
 
-Each custom detection rule has a dedicated triage runbook in the `runbooks/` directory. The library follows a standardized structure: one runbook per rule, each containing Context, Triage Steps, and False Positive Guidance. Built-in Wazuh rules (5760, 5712, 554, 550) do not have separate runbooks because their detection context and validation are fully documented within the corresponding phase files ([Phase 3](./phase-3-threat-simulation.md/) and [Phase 4](./phase-4-fim.md/)).
+Each custom detection rule has a dedicated triage runbook in the `runbooks/` directory. The library follows a standardized structure: one runbook per rule, each containing Context, Triage Steps, and False Positive Guidance. Built-in Wazuh rules (5760, 5712, 554, 550) do not have separate runbooks because their detection context and validation are fully documented within the corresponding phase files ([Phase 3](../phase-3-threat-simulation.md) and [Phase 4](../phase-4-fim.md)).
 
 | Runbook | Rule | Severity | ATT&CK Tactic |
 |---|---|---|---|
-| [`runbook-100001-passwd-modification.md`](./runbooks/runbook-100001-passwd-modification.md) | 100001 | Level 12 — Critical | Persistence / Privilege Escalation |
-| [`runbook-100002-ssh-bruteforce.md`](./runbooks/runbook-100002-ssh-bruteforce.md) | 100002 | Level 10 — Alert | Credential Access |
-| [`runbook-100003-sudo-abuse.md`](./runbooks/runbook-100003-sudo-abuse.md) | 100003 | Level 8 — Warning | Privilege Escalation |
-| [`runbook-100004-discovery.md`](./runbooks/runbook-100004-discovery.md) | 100004 | Level 7 — Warning | Discovery |
-| [`runbook-100005-reverse-shell.md`](./runbooks/runbook-100005-reverse-shell.md) | 100005 | Level 12 — Critical | Command and Control |
+| [`runbook-100001-passwd-modification.md`](../runbooks/runbook-100001-passwd-modification.md) | 100001 | Level 12 — Critical | Persistence / Privilege Escalation |
+| [`runbook-100002-ssh-bruteforce.md`](../runbooks/runbook-100002-ssh-bruteforce.md) | 100002 | Level 10 — Alert | Credential Access |
+| [`runbook-100003-sudo-abuse.md`](../runbooks/runbook-100003-sudo-abuse.md) | 100003 | Level 8 — Warning | Privilege Escalation |
+| [`runbook-100004-discovery.md`](../runbooks/runbook-100004-discovery.md) | 100004 | Level 7 — Warning | Discovery |
+| [`runbook-100005-reverse-shell.md`](../runbooks/runbook-100005-reverse-shell.md) | 100005 | Level 12 — Critical | Command and Control |
 
 ---
 
@@ -115,4 +115,4 @@ wazuh-siem-homelab/
 
 ---
 
-*Previous: [Phase 5 — Custom detection engineering](./phase-5-custom-rules.md/) · Next: [Phase 7 — Custom Wazuh dashboard](./phase-7-custom-dashboard.md/)*
+*Previous: [Phase 5 — Custom detection engineering](./phase-5-custom-rules.md) · Next: [Phase 7 — Custom Wazuh dashboard](./phase-7-custom-dashboard.md)*

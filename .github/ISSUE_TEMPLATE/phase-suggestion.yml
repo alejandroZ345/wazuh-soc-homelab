@@ -1,0 +1,76 @@
+name: "Phase Suggestion"
+description: "Propose a new lab phase, detection coverage expansion, or structural improvement to the repository."
+title: "[Suggestion]: "
+labels: ["enhancement", "discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea for a new phase or improvement? This project grows through iteration — suggestions are welcome regardless of scope.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Suggestion category"
+      description: "What type of improvement are you proposing?"
+      options:
+        - "New lab phase (e.g., active response, SOAR integration, log forwarding)"
+        - "Detection coverage expansion (new rules or threat vectors)"
+        - "Existing phase improvement (deeper analysis, additional validation)"
+        - "Repository structure or organization"
+        - "Runbook addition or improvement"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Describe your suggestion. What would it add to the project, and why is it valuable for a SOC-focused lab?"
+      placeholder: |
+        Phase 8 could implement Wazuh Active Response scripts to automatically block attacker IPs when Rule 100002 (SSH brute-force) fires. This would demonstrate automated containment capabilities and close the loop between detection and response.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mitre_tactic
+    attributes:
+      label: "MITRE ATT&CK tactic (if applicable)"
+      description: "If this suggestion addresses a specific ATT&CK tactic, select it here."
+      options:
+        - "Not applicable"
+        - "Reconnaissance"
+        - "Resource Development"
+        - "Initial Access"
+        - "Execution"
+        - "Persistence"
+        - "Privilege Escalation"
+        - "Defense Evasion"
+        - "Credential Access"
+        - "Discovery"
+        - "Lateral Movement"
+        - "Collection"
+        - "Command and Control"
+        - "Exfiltration"
+        - "Impact"
+    validations:
+      required: false
+
+  - type: textarea
+    id: coverage_gap
+    attributes:
+      label: "Coverage gap addressed (optional)"
+      description: "If this suggestion closes a gap listed in detections/mitre-attack-map.md, reference it here."
+      placeholder: "This would address the Lateral Movement gap currently listed as TBD in the coverage gaps table."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: "Willingness to contribute"
+      description: "Would you be interested in helping implement this suggestion?"
+      options:
+        - label: "I'd be willing to submit a PR for this if the maintainer approves the direction."
+          required: false

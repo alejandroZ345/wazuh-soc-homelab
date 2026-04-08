@@ -92,4 +92,4 @@ All components successfully migrated to the secondary SSD (D: drive).
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](./README.md) project.*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project.*

@@ -130,4 +130,4 @@ Even in these cases, the alert should be reviewed and closed with a documented j
 
 ---
 
-*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phase-5-custom-rules.md#4-final-xml-configuration) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*
+*Part of the [Wazuh SIEM Home Lab](../README.md) project · Rule definition in [Phase 5 § 4](../phases/phase-5-custom-rules.md#4-final-xml-configuration) · ATT&CK mapping in [detections/](../detections/mitre-attack-map.md)*
