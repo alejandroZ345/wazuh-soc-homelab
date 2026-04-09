@@ -12,7 +12,9 @@
 
 ## Overview
 
-This project documents the deployment and operation of an enterprise-grade SIEM/XDR platform using **Wazuh v4.14.4** orchestrated via Docker Compose on a WSL2 environment. The goal is to simulate a real-world Security Operations Center (SOC) pipeline — from infrastructure provisioning to active threat detection, custom detection engineering, standardized MITRE ATT&CK intelligence mapping, and automated threat containment — covering skills directly applicable to Junior SOC Analyst and Network Security Engineer roles.
+This project documents the deployment and operation of an enterprise-grade SIEM/XDR platform using **Wazuh v4.14.4** orchestrated via Docker Compose on a WSL2 environment, integrated with **TheHive v5** as an Incident Response Platform. 
+
+The goal is to simulate a real-world Security Operations Center (SOC) pipeline — from infrastructure provisioning to active threat detection, custom detection engineering, standardized MITRE ATT&CK intelligence mapping, automated threat containment, and centralized incident case management. This covers skills directly applicable to Junior SOC Analyst and Network Security Engineer roles.
 
 The lab is structured as a series of documented phases, each building on the previous one, so that every configuration decision and troubleshooting step is reproducible and auditable.
 
@@ -27,6 +29,7 @@ The lab is structured as a series of documented phases, each building on the pre
 | Linux distro | Ubuntu (WSL2) — migrated to D: drive |
 | Container engine | Docker Desktop v29.3.1 (WSL2 backend) |
 | SIEM version | Wazuh v4.14.4 — single-node architecture |
+| IRP version | TheHive v5.2.11 (Cassandra 4 + Elasticsearch 7.17) |
 | Attacker OS | Kali Linux (WSL2) — migrated to D: drive |
 
 ---
@@ -44,7 +47,7 @@ The lab is structured as a series of documented phases, each building on the pre
 | [Phase 6](./phases/phase-6-mitre-mapping.md/) | MITRE ATT&CK mapping & detection standardization | ✅ Complete |
 | [Phase 7](./phases/phase-7-custom-dashboard.md/) | Custom SOC dashboard & telemetry visualization | ✅ Complete |
 | [Phase 8](./phases/phase-8-active-response.md/) | Active response engineering & automated containment | ✅ Complete |
-| Phase 9 | TheHive integration — incident case management | 🔜 Planned |
+| [Phase 9](./phases/phase-9-thehive-integration.md/) | TheHive integration — incident case management | ✅ Complete |
 
 ---
 
@@ -65,6 +68,8 @@ The lab is structured as a series of documented phases, each building on the pre
 **SOC dashboard engineering** — A custom "Single Pane of Glass" dashboard was built on the native OpenSearch visualization engine (bypassing Wazuh 4.14.4 UI restrictions) to surface five critical KPIs in an asymmetric, SOC-optimized layout.
 
 **Automated threat containment** — The deployment was elevated from passive SIEM to active IPS through two automated response mechanisms: a custom `wall` broadcast alert for FIM-triggered persistence indicators (Rule 100001) and a network-level `firewall-drop` IP ban for brute-force attacks (Rule 100002), reducing the detection-to-containment window to under 2 seconds.
+
+**Incident response platform integration** — TheHive v5 was deployed as an isolated Docker stack and connected to Wazuh via a custom Python integration script. High-fidelity alerts (Level ≥ 10) are automatically forwarded to the analyst queue with structured metadata, enabling case management, observable extraction, and forensic investigation without touching raw SIEM logs.
 
 ---
 
@@ -96,8 +101,14 @@ The lab is structured as a series of documented phases, each building on the pre
 | 100001 — `/etc/passwd` modification | Custom `alert-root.sh` | System-wide `wall` broadcast to all terminals | Immediate |
 | 100002 — SSH brute-force | Native `firewall-drop` | `iptables` IP ban on attacker source | 180 seconds |
 
-> The complete ATT&CK mapping matrix is maintained in [`detections/mitre-attack-map.md`](./detections/mitre-attack-map.md). Triage procedures for each custom rule are documented in the [`runbooks/`](./runbooks/) directory.
+### IRP integration (engineered in Phase 9)
 
+| Alert threshold | Destination | Script | Format handling |
+|---|---|---|---|
+| Rule level ≥ 10 | TheHive v5 (`/api/v1/alert`) | Custom Python (`custom-thehive`) | JSON primary + plain-text fallback |
+
+> The complete ATT&CK mapping matrix is maintained in [`detections/mitre-attack-map.md`](./detections/mitre-attack-map.md). Triage procedures for each custom rule are documented in the [`runbooks/`](./runbooks/) directory.
+> 
 ---
 
 ## Notable Technical Challenges Solved
@@ -115,6 +126,8 @@ The lab is structured as a series of documented phases, each building on the pre
 **User-space command auditing without kernel recompilation** — Full terminal command visibility was achieved on WSL2 (where auditd is unavailable) by injecting a `PROMPT_COMMAND` hook into `/etc/bash.bashrc` that pipes every executed command through `logger` to syslog, tagged as `bash_audit`. This created the telemetry pipeline that rules 100004 and 100005 consume.
 
 **Active response in WSL2 — loopback whitelisting & missing dependencies** — Deploying automated IP banning on WSL2 required resolving three compounding issues: Windows PowerShell resolving `localhost` to IPv6 `::1`, Wazuh's hardcoded loopback whitelist preventing active responses against `127.0.0.1`/`::1`, and WSL2's minimal Ubuntu image shipping without `iptables`. Each was diagnosed through log analysis and resolved independently.
+
+**TheHive v5 RBAC & I/O race conditions** — Integrating TheHive v5 required navigating its strict multi-tenant RBAC model (default admin organization is blind to operational data by design), a syntax sensitivity in Docker Compose commands that caused silent container failures, and a classic I/O race condition where the Python integration script read alert files before WSL2's virtual disk finished writing them. The solution combined organizational restructuring, a `time.sleep` safety pause, and a dual-format parser with JSON/plaintext fallback.
 
 ---
 
@@ -147,6 +160,7 @@ wazuh-siem-homelab/
 │   ├── phase-6-mitre-mapping.md
 │   ├── phase-7-custom-dashboard.md
 │   └── phase-8-active-response.md
+│   └── phase-9-thehive-integration.md
 │
 ├── detections/
 │   └── mitre-attack-map.md
@@ -163,8 +177,7 @@ wazuh-siem-homelab/
 
 ## Roadmap
 
-- [ ] Phase 9: Integrate TheHive for incident case management
-- [ ] Increase gap coverage using MITRE ATT&CK Standard (for Lateral Movement and Exfiltration attacks) [Phase 10?]
+- [ ] Feel free to report any issues or suggest improvements using the proper issue template! (You can propose new phases or enhancements.)
 
 ---
 

@@ -61,13 +61,4 @@
 
 ---
 
-## Coverage gaps (to be addressed in future phases)
-
-| ATT&CK tactic | Gap | Planned phase |
-|---|---|---|
-| Lateral Movement | No detection for internal network reconnaissance post-compromise | TBD |
-| Exfiltration | No detection for data staging or transfer | TBD |
-
----
-
 *Part of the [Wazuh SIEM Home Lab](../README.md) project · Detection logic in [Phase 5](../phases/phase-5-custom-rules.md/) · Triage procedures in [runbooks/](../runbooks)*
