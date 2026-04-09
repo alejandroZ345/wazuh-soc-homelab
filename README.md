@@ -136,11 +136,11 @@ The lab is structured as a series of documented phases, each building on the pre
 ```
 wazuh-siem-homelab/
 │
-├── LICENSE
 ├── README.md
+├── SECURITY.md
+├── LICENSE
 │
 ├── .github/
-│   ├── SECURITY.md
 │   ├── CODE_OF_CONDUCT.md
 │   ├── CONTRIBUTING.md
 │   └── ISSUE_TEMPLATE/
