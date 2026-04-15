@@ -139,6 +139,7 @@ wazuh-siem-homelab/
 ├── README.md
 ├── SECURITY.md
 ├── LICENSE
+├── docker-compose.yml
 │
 ├── .github/
 │   ├── CODE_OF_CONDUCT.md
@@ -172,6 +173,36 @@ wazuh-siem-homelab/
     ├── runbook-100004-discovery.md
     └── runbook-100005-reverse-shell.md
 ```
+
+---
+
+## Quick Start
+
+```bash
+# 1. Clone the Wazuh Official Repository
+cd ~
+git clone https://github.com/wazuh/wazuh-docker.git
+cd wazuh-docker
+
+# 2. Checkout the latest stable v4.x release
+# Strict regex to avoid alphas, betas, and release candidates
+git checkout $(git tag | grep -E "^v4\.[0-9]+\.[0-9]+$" | sort -V | tail -n 1)
+
+# 3. Navigate to single-node architecture
+cd single-node
+
+# 4. Generate internal TLS certificates using the ephemeral generator container
+docker compose -f generate-indexer-certs.yml run --rm generator
+
+# 5. Deploy the SIEM stack in detached mode
+docker compose up -d
+
+# 6. Verify all containers are running
+docker compose ps
+```
+
+> For the full setup walkthrough, start with [Phase 1](./phases/phase-1-stack-deployment.md/).
+
 
 ---
 

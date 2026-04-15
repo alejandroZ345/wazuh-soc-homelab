@@ -55,9 +55,9 @@ echo -e "[user]\ndefault=<your_username>" > /etc/wsl.conf
 
 ---
 
-### Phase 1.2 — Docker engine migration attempt & known limitations
+### Phase 1.2 — Docker engine migration attempts
 
-> **Community note / open challenge**
+> **Community note / open challenge (Resolved)** 
 
 The unified `docker-desktop` WSL distribution was migrated to the D: drive using the standard export/import method. While the WSL commands executed successfully after forcefully killing Docker's background processes, observation confirmed that Docker Desktop still heavily relies on the C: drive for actual container volume data and image caching — likely hardcoded into `AppData\Local\Docker`.
 
